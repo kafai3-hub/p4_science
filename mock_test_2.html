@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>小四科學科模擬試卷二 - 天氣與氣候</title>
+<style>
+body { font-family: "Microsoft JhengHei", Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+h1 { text-align: center; color: #1a5276; }
+.question { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; }
+label { display: block; margin: 5px 0; }
+img { max-width: 100%; height: auto; margin: 10px 0; }
+button { background: #1a5276; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+.result { margin-top: 30px; padding: 20px; background: #eaf2f8; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>小四科學科模擬試卷二</h1>
+<p style="text-align:center;">單元：天氣與氣候　|　總分：40分　|　時間：30分鐘</p>
+<form id="quiz2">
+<div class="question">
+<h3>一、選擇題（每題2分）</h3>
+<p>1. 「天氣」和「氣候」的主要分別是？</p>
+<label><input type="radio" name="q1" value="B"> B. 天氣是短期，氣候是長期平均</label>
+<label><input type="radio" name="q1" value="A"> A. 天氣是長期平均，氣候是短期</label>
+</div>
+<div class="question">
+<p>2. 香港的氣候特點較接近？</p>
+<label><input type="radio" name="q2" value="B"> B. 夏季炎熱多雨，冬季較涼爽</label>
+</div>
+<div class="question">
+<p>3. 全球增溫的主要成因之一是？</p>
+<label><input type="radio" name="q3" value="A"> A. 過度使用化石燃料排放溫室氣體</label>
+</div>
+<div class="question">
+<p>4. 以下哪項會增加碳足跡？</p>
+<label><input type="radio" name="q4" value="B"> B. 使用即棄餐具</label>
+</div>
+<div class="question">
+<p>5. 新加坡全年氣溫變化較少的主要原因是？</p>
+<label><input type="radio" name="q5" value="B"> B. 靠近赤道</label>
+</div>
+<div class="question">
+<h3>二、填空題（每空1分）</h3>
+<p>1. 氣候變化可能導致冰川________、海平面________、土地荒漠化。</p>
+<input type="text" name="f1" placeholder="融化">
+<input type="text" name="f2" placeholder="升高">
+<p>2. 香港與________的全年氣溫變化相反。</p>
+<input type="text" name="f3" placeholder="坎培拉">
+<p>3. 碳足跡是指因人類活動而產生的________的數量。</p>
+<input type="text" name="f4" placeholder="溫室氣體">
+</div>
+<div class="question">
+<h3>三、簡答題（共10分）</h3>
+<p>1. 寫出天氣和氣候的定義，並各舉一個例子。（6分）</p>
+<textarea name="s1" rows="4" style="width:100%;"></textarea>
+<p>2. 舉出兩項可以減少碳足跡的日常生活做法。（4分）</p>
+<textarea name="s2" rows="3" style="width:100%;"></textarea>
+</div>
+<div class="question">
+<h3>四、配圖題（共10分）</h3>
+<p>觀察世界地圖，比較香港、北京、新加坡的地理位置與氣候。</p>
+<img src="https://teachsimplecom.s3.us-east-2.amazonaws.com/images/continents-oceans-and-maps/image-1692891162435-1.jpg" alt="世界地圖">
+<textarea name="p1" rows="4" style="width:100%;"></textarea>
+</div>
+<button type="button" onclick="checkAnswers2()">提交並評分</button>
+</form>
+<div id="result2" class="result" style="display:none;"></div>
+<script>
+function checkAnswers2() {
+  let score = 0;
+  const answers = {q1:'B', q2:'B', q3:'A', q4:'B', q5:'B', f1:'融化', f2:'升高', f3:'坎培拉', f4:'溫室氣體'};
+  for (let k in answers) {
+    const el = document.querySelector(`[name="${k}"]`);
+    if (el && el.value.trim() === answers[k]) score += (k.startsWith('q') ? 2 : 1);
+  }
+  document.getElementById('result2').style.display = 'block';
+  document.getElementById('result2').innerHTML = `<h2>客觀題得分：${score} / 14 分</h2><p>簡答與配圖請自行對照答案評分。</p>
+  <h3>參考答案</h3><ul>
+  <li>選擇：1B 2B 3A 4B 5B</li>
+  <li>填空：融化、升高、坎培拉、溫室氣體</li>
+  <li>天氣：短期氣象；氣候：長期平均。</li>
+  <li>減少碳足跡：節約用電、少用即棄用品等。</li>
+  </ul>`;
+}
+</script>
+</body>
+</html>
