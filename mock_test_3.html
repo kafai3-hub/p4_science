@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>小四科學科模擬試卷三 - 動植物與環境</title>
+<style>
+body { font-family: "Microsoft JhengHei", Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
+h1 { text-align: center; color: #1a5276; }
+.question { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; }
+label { display: block; margin: 5px 0; }
+button { background: #1a5276; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+.result { margin-top: 30px; padding: 20px; background: #eaf2f8; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>小四科學科模擬試卷三</h1>
+<p style="text-align:center;">單元：動植物與環境 + 綜合　|　總分：45分　|　時間：35分鐘</p>
+<form id="quiz3">
+<div class="question">
+<h3>一、選擇題（每題2分）</h3>
+<p>1. 極地動物保溫的方法不包括？</p>
+<label><input type="radio" name="q1" value="D"> D. 長出刺狀葉</label>
+</div>
+<div class="question">
+<p>2. 沙漠植物常見的適應特徵是？</p>
+<label><input type="radio" name="q2" value="B"> B. 肥厚的莖儲水、葉呈刺狀</label>
+</div>
+<div class="question">
+<p>3. 香港米埔自然保護區對鳥類重要的原因是？</p>
+<label><input type="radio" name="q3" value="A"> A. 提供食物、棲息地和繁殖地方</label>
+</div>
+<div class="question">
+<p>4. 壤土最適合哪類植物生長？</p>
+<label><input type="radio" name="q4" value="B"> B. 玫瑰</label>
+</div>
+<div class="question">
+<p>5. 板塊碰撞可能導致？</p>
+<label><input type="radio" name="q5" value="B"> B. 地震或火山爆發</label>
+</div>
+<div class="question">
+<h3>二、填空題（每空1分）</h3>
+<p>1. 生活在極地的動物很多有________的毛和厚厚的皮下脂肪。</p>
+<input type="text" name="f1" placeholder="濃密">
+<p>2. 駱駝有可以儲存脂肪的________。</p>
+<input type="text" name="f2" placeholder="駝峯">
+<p>3. 熱帶雨林植物有巨大的________來固定樹幹。</p>
+<input type="text" name="f3" placeholder="板根">
+<p>4. 候鳥會________到較溫暖的地方過冬。</p>
+<input type="text" name="f4" placeholder="遷徙">
+</div>
+<div class="question">
+<h3>三、簡答題（共12分）</h3>
+<p>1. 舉出兩種沙漠動物及其適應乾燥炎熱環境的方法。（6分）</p>
+<textarea name="s1" rows="4" style="width:100%;"></textarea>
+<p>2. 為什麼香港的濕地對鳥類很重要？（3分）</p>
+<textarea name="s2" rows="3" style="width:100%;"></textarea>
+<p>3. 沙土、壤土、黏土的排水能力有甚麼不同？（3分）</p>
+<textarea name="s3" rows="3" style="width:100%;"></textarea>
+</div>
+<button type="button" onclick="checkAnswers3()">提交並評分</button>
+</form>
+<div id="result3" class="result" style="display:none;"></div>
+<script>
+function checkAnswers3() {
+  let score = 0;
+  const answers = {q1:'D', q2:'B', q3:'A', q4:'B', q5:'B', f1:'濃密', f2:'駝峯', f3:'板根', f4:'遷徙'};
+  for (let k in answers) {
+    const el = document.querySelector(`[name="${k}"]`);
+    if (el && el.value.trim() === answers[k]) score += (k.startsWith('q') ? 2 : 1);
+  }
+  document.getElementById('result3').style.display = 'block';
+  document.getElementById('result3').innerHTML = `<h2>客觀題得分：${score} / 18 分</h2><p>簡答題請自行評分。</p>
+  <h3>參考答案</h3><ul>
+  <li>選擇：1D 2B 3A 4B 5B</li>
+  <li>填空：濃密、駝峯、板根、遷徙</li>
+  <li>沙漠動物：駱駝（駝峯儲脂、長睫毛）、狐獅（挖洞）等。</li>
+  <li>濕地：提供食物、棲息和繁殖地，香港較暖吸引候鳥。</li>
+  <li>沙土排水好、壤土適中、黏土排水差。</li>
+  </ul>`;
+}
+</script>
+</body>
+</html>
