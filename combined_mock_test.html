@@ -1,1 +1,295 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>小四科學科綜合模擬試卷 - 認識地球</title>
+<style>
+body { font-family: "Microsoft JhengHei", Arial, sans-serif; max-width: 950px; margin: 20px auto; padding: 20px; line-height: 1.7; background: #f5f7fa; }
+h1 { text-align: center; color: #1a5276; }
+.section { margin: 25px 0; padding: 18px; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.question { margin: 15px 0; }
+label { display: block; margin: 6px 0; cursor: pointer; }
+img { max-width: 100%; height: auto; margin: 12px 0; border: 1px solid #ccc; border-radius: 6px; }
+button { background: #1a5276; color: white; padding: 12px 28px; border: none; border-radius: 6px; cursor: pointer; font-size: 17px; margin: 20px 0; }
+button:hover { background: #154360; }
+.result { margin-top: 30px; padding: 25px; background: #eaf2f8; border-radius: 10px; border-left: 5px solid #1a5276; }
+input[type="text"], textarea { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; }
+</style>
+</head>
+<body>
+<h1>小四科學科綜合模擬試卷</h1>
+<p style="text-align:center; font-size:1.1em;">單元一：認識地球（結構、轉動、天氣氣候、動植物與環境）<br>總分：約80分　|　建議時間：50分鐘</p>
+
+<form id="quiz">
+<!-- 選擇題 -->
+<div class="section">
+<h2>一、選擇題（每題2分，共20題）</h2>
+
+<div class="question">
+<p>1. 地球的結構由外到內依次是？</p>
+<label><input type="radio" name="q1" value="B"> B. 地殼、地幔、地核</label>
+<label><input type="radio" name="q1" value="A"> A. 地核、地幔、地殼</label>
+<label><input type="radio" name="q1" value="C"> C. 地幔、地殼、地核</label>
+<label><input type="radio" name="q1" value="D"> D. 地殼、地核、地幔</label>
+</div>
+
+<div class="question">
+<p>2. 板塊移動可能引發的自然現象是？</p>
+<label><input type="radio" name="q2" value="B"> B. 地震或火山爆發</label>
+<label><input type="radio" name="q2" value="A"> A. 下雨</label>
+<label><input type="radio" name="q2" value="C"> C. 日蝕</label>
+<label><input type="radio" name="q2" value="D"> D. 季節變化</label>
+</div>
+
+<div class="question">
+<p>3. 由岩漿冷卻凝固而成的岩石稱為？</p>
+<label><input type="radio" name="q3" value="C"> C. 火成岩</label>
+<label><input type="radio" name="q3" value="A"> A. 沉積岩</label>
+<label><input type="radio" name="q3" value="B"> B. 變質岩</label>
+<label><input type="radio" name="q3" value="D"> D. 頁岩</label>
+</div>
+
+<div class="question">
+<p>4. 地球自轉一周需要多少時間？</p>
+<label><input type="radio" name="q4" value="B"> B. 24小時</label>
+<label><input type="radio" name="q4" value="A"> A. 12小時</label>
+<label><input type="radio" name="q4" value="C"> C. 365日</label>
+<label><input type="radio" name="q4" value="D"> D. 1個月</label>
+</div>
+
+<div class="question">
+<p>5. 季節變化主要是因為？</p>
+<label><input type="radio" name="q5" value="B"> B. 地軸傾斜 + 地球公轉</label>
+<label><input type="radio" name="q5" value="A"> A. 地球自轉</label>
+<label><input type="radio" name="q5" value="C"> C. 月球引力</label>
+<label><input type="radio" name="q5" value="D"> D. 板塊移動</label>
+</div>
+
+<div class="question">
+<p>6. 「天氣」和「氣候」的主要分別是？</p>
+<label><input type="radio" name="q6" value="B"> B. 天氣是短期，氣候是長期平均</label>
+<label><input type="radio" name="q6" value="A"> A. 天氣是長期平均，氣候是短期</label>
+<label><input type="radio" name="q6" value="C"> C. 兩者完全相同</label>
+<label><input type="radio" name="q6" value="D"> D. 氣候只指下雨</label>
+</div>
+
+<div class="question">
+<p>7. 香港的氣候特點較接近？</p>
+<label><input type="radio" name="q7" value="B"> B. 夏季炎熱多雨，冬季較涼爽</label>
+<label><input type="radio" name="q7" value="A"> A. 全年寒冷乾燥</label>
+<label><input type="radio" name="q7" value="C"> C. 全年炎熱少雨</label>
+<label><input type="radio" name="q7" value="D"> D. 冬季多雪</label>
+</div>
+
+<div class="question">
+<p>8. 全球增溫的主要成因之一是？</p>
+<label><input type="radio" name="q8" value="A"> A. 過度使用化石燃料排放溫室氣體</label>
+<label><input type="radio" name="q8" value="B"> B. 地球自轉變快</label>
+<label><input type="radio" name="q8" value="C"> C. 月球遠離地球</label>
+<label><input type="radio" name="q8" value="D"> D. 板塊停止移動</label>
+</div>
+
+<div class="question">
+<p>9. 以下哪項會增加碳足跡？</p>
+<label><input type="radio" name="q9" value="B"> B. 使用即棄餐具</label>
+<label><input type="radio" name="q9" value="A"> A. 步行上學</label>
+<label><input type="radio" name="q9" value="C"> C. 節約用電</label>
+<label><input type="radio" name="q9" value="D"> D. 種植樹木</label>
+</div>
+
+<div class="question">
+<p>10. 新加坡全年氣溫變化較少的主要原因是？</p>
+<label><input type="radio" name="q10" value="B"> B. 靠近赤道</label>
+<label><input type="radio" name="q10" value="A"> A. 靠近北極</label>
+<label><input type="radio" name="q10" value="C"> C. 地勢很高</label>
+<label><input type="radio" name="q10" value="D"> D. 被海洋包圍</label>
+</div>
+
+<div class="question">
+<p>11. 極地動物保溫的方法不包括？</p>
+<label><input type="radio" name="q11" value="D"> D. 長出刺狀葉</label>
+<label><input type="radio" name="q11" value="A"> A. 濃密的毛</label>
+<label><input type="radio" name="q11" value="B"> B. 厚厚的皮下脂肪</label>
+<label><input type="radio" name="q11" value="C"> C. 群居取暖</label>
+</div>
+
+<div class="question">
+<p>12. 沙漠植物常見的適應特徵是？</p>
+<label><input type="radio" name="q12" value="B"> B. 肥厚的莖儲水、葉呈刺狀</label>
+<label><input type="radio" name="q12" value="A"> A. 巨大的板根</label>
+<label><input type="radio" name="q12" value="C"> C. 濃密的葉</label>
+<label><input type="radio" name="q12" value="D"> D. 淺根系統</label>
+</div>
+
+<div class="question">
+<p>13. 香港米埔自然保護區對鳥類重要的原因是？</p>
+<label><input type="radio" name="q13" value="A"> A. 提供食物、棲息地和繁殖地方</label>
+<label><input type="radio" name="q13" value="B"> B. 氣候非常寒冷</label>
+<label><input type="radio" name="q13" value="C"> C. 沒有任何植物</label>
+<label><input type="radio" name="q13" value="D"> D. 只有沙漠環境</label>
+</div>
+
+<div class="question">
+<p>14. 壤土最適合哪類植物生長？</p>
+<label><input type="radio" name="q14" value="B"> B. 玫瑰</label>
+<label><input type="radio" name="q14" value="A"> A. 仙人掌</label>
+<label><input type="radio" name="q14" value="C"> C. 水生植物</label>
+<label><input type="radio" name="q14" value="D"> D. 極地苔藓</label>
+</div>
+
+<div class="question">
+<p>15. 地核的外核主要是什麼狀態？</p>
+<label><input type="radio" name="q15" value="B"> B. 液態</label>
+<label><input type="radio" name="q15" value="A"> A. 固態</label>
+<label><input type="radio" name="q15" value="C"> C. 氣態</label>
+<label><input type="radio" name="q15" value="D"> D. 冰態</label>
+</div>
+
+<div class="question">
+<p>16. 一天中影子最短的時間通常是？</p>
+<label><input type="radio" name="q16" value="B"> B. 中午</label>
+<label><input type="radio" name="q16" value="A"> A. 清晨</label>
+<label><input type="radio" name="q16" value="C"> C. 黃昏</label>
+<label><input type="radio" name="q16" value="D"> D. 午夜</label>
+</div>
+
+<div class="question">
+<p>17. 駝駝適應沙漠環境的主要方法是？</p>
+<label><input type="radio" name="q17" value="B"> B. 駝峰儲存脂肪、長睫毛防沙</label>
+<label><input type="radio" name="q17" value="A"> A. 長出刺狀葉</label>
+<label><input type="radio" name="q17" value="C"> C. 板根固定</label>
+<label><input type="radio" name="q17" value="D"> D. 遷徙到極地</label>
+</div>
+
+<div class="question">
+<p>18. 以下哪項屬於沉積岩？</p>
+<label><input type="radio" name="q18" value="A"> A. 頁岩、砂岩</label>
+<label><input type="radio" name="q18" value="B"> B. 花崗岩</label>
+<label><input type="radio" name="q18" value="C"> C. 大理石</label>
+<label><input type="radio" name="q18" value="D"> D. 玄武岩</label>
+</div>
+
+<div class="question">
+<p>19. 全球增溫可能導致的後果是？</p>
+<label><input type="radio" name="q19" value="B"> B. 冰川融化、海平面上升</label>
+<label><input type="radio" name="q19" value="A"> A. 地球自轉變慢</label>
+<label><input type="radio" name="q19" value="C"> C. 板塊停止移動</label>
+<label><input type="radio" name="q19" value="D"> D. 季節消失</label>
+</div>
+
+<div class="question">
+<p>20. 候鳥遷徙的主要原因是？</p>
+<label><input type="radio" name="q20" value="B"> B. 尋找較溫暖的地方過冬</label>
+<label><input type="radio" name="q20" value="A"> A. 躲避地震</label>
+<label><input type="radio" name="q20" value="C"> C. 改變地球自轉</label>
+<label><input type="radio" name="q20" value="D"> D. 增加碳足跡</label>
+</div>
+</div>
+
+<!-- 填空題 -->
+<div class="section">
+<h2>二、填空題（每空1分，共12空）</h2>
+<div class="question">
+<p>1. 地幔含有熾熱、會流動的________。</p>
+<input type="text" name="f1">
+<p>2. 沙土顆粒最大，排水能力較好，適合________生長。</p>
+<input type="text" name="f2">
+<p>3. 地球面向太陽的一面是________，背向太陽的一面是黑夜。</p>
+<input type="text" name="f3">
+<p>4. 岩石按形成過程分為火成岩、________岩和變質岩。</p>
+<input type="text" name="f4">
+<p>5. 氣候變化可能導致冰川________、海平面________。</p>
+<input type="text" name="f5">
+<input type="text" name="f6">
+<p>6. 香港與________的全年氣溫變化相反。</p>
+<input type="text" name="f7">
+<p>7. 碳足跡是指因人類活動而產生的________的數量。</p>
+<input type="text" name="f8">
+<p>8. 生活在極地的動物很多有________的毛和厚厚的皮下脂肪。</p>
+<input type="text" name="f9">
+<p>9. 駝駝有可以儲存脂肪的________。</p>
+<input type="text" name="f10">
+<p>10. 熱帶雨林植物有巨大的________來固定樹幹。</p>
+<input type="text" name="f11">
+<p>11. 候鳥會________到較溫暖的地方過冬。</p>
+<input type="text" name="f12">
+</div>
+</div>
+
+<!-- 簡答題 -->
+<div class="section">
+<h2>三、簡答題（共24分）</h2>
+<div class="question">
+<p>1. 寫出地球三層結構的名稱，並各說一個特點。（6分）</p>
+<textarea name="s1" rows="4"></textarea>
+<p>2. 為什麼會有白天和黑夜？請簡單解釋。（4分）</p>
+<textarea name="s2" rows="3"></textarea>
+<p>3. 在一天不同時間，影子的長度和方向有甚麼變化？（4分）</p>
+<textarea name="s3" rows="3"></textarea>
+<p>4. 寫出天氣和氣候的定義，並各舉一個例子。（6分）</p>
+<textarea name="s4" rows="4"></textarea>
+<p>5. 舉出兩項可以減少碳足跡的日常生活做法。（4分）</p>
+<textarea name="s5" rows="3"></textarea>
+</div>
+</div>
+
+<!-- 配圖題 -->
+<div class="section">
+<h2>四、配圖題（共16分）</h2>
+<div class="question">
+<p>1. 觀察下圖，標示地殼、地幔、外核、內核的位置（可用文字描述）。（8分）</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Earth_layers_NASA.png" alt="地球內部結構圖">
+<textarea name="p1" rows="4"></textarea>
+</div>
+<div class="question">
+<p>2. 觀察日夜圖，說明哪一面是白天、哪一面是黑夜，並解釋原因。（8分）</p>
+<img src="https://yeeqtrevjmgjepxchuhw.supabase.co/storage/v1/object/public/generated-images/library-day_and_night_cycle-watermarked.png" alt="日夜交替圖">
+<textarea name="p2" rows="4"></textarea>
+</div>
+</div>
+
+<button type="button" onclick="checkAnswers()">提交並評分</button>
+</form>
+
+<div id="result" class="result" style="display:none;"></div>
+
+<script>
+function checkAnswers() {
+  let score = 0;
+  const answers = {
+    q1: 'B', q2: 'B', q3: 'C', q4: 'B', q5: 'B',
+    q6: 'B', q7: 'B', q8: 'A', q9: 'B', q10: 'B',
+    q11: 'D', q12: 'B', q13: 'A', q14: 'B', q15: 'B',
+    q16: 'B', q17: 'B', q18: 'A', q19: 'B', q20: 'B',
+    f1: '岩漿', f2: '仙人掌', f3: '白天', f4: '沉積',
+    f5: '融化', f6: '升高', f7: '坎培拉', f8: '溫室氣體',
+    f9: '濃密', f10: '駝峰', f11: '板根', f12: '遷徙'
+  };
+  for (let k in answers) {
+    const el = document.querySelector(`[name="${k}"]`);
+    if (el && el.value.trim() === answers[k]) {
+      score += (k.startsWith('q') ? 2 : 1);
+    }
+  }
+  const resultDiv = document.getElementById('result');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = `
+    <h2>客觀題得分：${score} / 52 分</h2>
+    <p>簡答題（24分）和配圖題（16分）請對照參考答案自行評分。總分約92分。</p>
+    <h3>參考答案</h3>
+    <ul>
+      <li><strong>選擇題：</strong>1B 2B 3C 4B 5B 6B 7B 8A 9B 10B 11D 12B 13A 14B 15B 16B 17B 18A 19B 20B</li>
+      <li><strong>填空：</strong>岩漿、仙人掌、白天、沉積、融化、升高、坎培拉、溫室氣體、濃密、駝峰、板根、遷徙</li>
+      <li><strong>簡答1：</strong>地殼（最外層，岩石板塊）、地幔（熾熱流動岩漿）、地核（中心，高溫金屬；外核液態、內核固態）</li>
+      <li><strong>簡答2：</strong>地球自轉，面向太陽為白天，背向為黑夜，一周約24小時。</li>
+      <li><strong>簡答3：</strong>影子長度和方向會隨太陽位置改變而變化；中午最短，早晚較長。</li>
+      <li><strong>簡答4：</strong>天氣：短期氣象狀況（如今天有雨）；氣候：長期平均天氣（如香港夏季炎熱多雨）。</li>
+      <li><strong>簡答5：</strong>節約用電、少用即棄用品、步行或搭公共交通等。</li>
+      <li><strong>配圖：</strong>按圖標示各層；面向太陽為白天，背向為黑夜，因地球自轉。</li>
+    </ul>
+  `;
+  resultDiv.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
