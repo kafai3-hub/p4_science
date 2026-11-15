@@ -2,69 +2,68 @@
 <html lang="zh-HK">
 <head>
 <meta charset="UTF-8">
-<title>小四科學科模擬試卷一 - 地球的結構 + 轉動的地球</title>
+<title>小四科學科模擬試卷一</title>
 <style>
 body { font-family: "Microsoft JhengHei", Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; line-height: 1.6; }
-h1 { text-align: center; color: #1a5276; }
 .question { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; }
 label { display: block; margin: 5px 0; }
-img { max-width: 100%; height: auto; margin: 10px 0; }
-button { background: #1a5276; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-.result { margin-top: 30px; padding: 20px; background: #eaf2f8; border-radius: 8px; }
+button { background: #1a5276; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+.result { margin-top: 30px; padding: 20px; background: #eaf2f8; border-radius: 8px; display:none; }
 </style>
 </head>
 <body>
 <h1>小四科學科模擬試卷一</h1>
-<p style="text-align:center;">單元：地球的結構 + 轉動的地球　|　總分：45分　|　時間：35分鐘</p>
+<p>建議改用 <a href="combined_mock_test.html">綜合模擬試卷</a>（題目更多、4選1、答案只在最後顯示）</p>
+<p>單元：地球的結構 + 轉動的地球</p>
 <form id="quiz1">
 <div class="question">
-<h3>一、選擇題（每題2分）</h3>
 <p>1. 地球由外至內的三個主要圈層是？</p>
 <label><input type="radio" name="q1" value="A"> A. 地殼、地幔、地核</label>
 <label><input type="radio" name="q1" value="B"> B. 大氣層、水圈、岩石圈</label>
+<label><input type="radio" name="q1" value="C"> C. 地核、地殼、地幔</label>
+<label><input type="radio" name="q1" value="D"> D. 地幔、地核、地殼</label>
 </div>
 <div class="question">
 <p>2. 我們生活的地方屬於哪一層？</p>
 <label><input type="radio" name="q2" value="A"> A. 地殼</label>
+<label><input type="radio" name="q2" value="B"> B. 地幔</label>
+<label><input type="radio" name="q2" value="C"> C. 地核</label>
+<label><input type="radio" name="q2" value="D"> D. 大氣層</label>
 </div>
 <div class="question">
 <p>3. 地球自轉一周大約需要多久？</p>
+<label><input type="radio" name="q3" value="A"> A. 12小時</label>
 <label><input type="radio" name="q3" value="B"> B. 24小時</label>
+<label><input type="radio" name="q3" value="C"> C. 365日</label>
+<label><input type="radio" name="q3" value="D"> D. 1個月</label>
 </div>
 <div class="question">
 <p>4. 造成晝夜交替的主要原因是？</p>
 <label><input type="radio" name="q4" value="A"> A. 地球自轉</label>
+<label><input type="radio" name="q4" value="B"> B. 地球公轉</label>
+<label><input type="radio" name="q4" value="C"> C. 月球引力</label>
+<label><input type="radio" name="q4" value="D"> D. 板塊移動</label>
 </div>
 <div class="question">
 <p>5. 板塊運動可能導致？</p>
+<label><input type="radio" name="q5" value="A"> A. 下雨</label>
 <label><input type="radio" name="q5" value="B"> B. 地震或火山爆發</label>
+<label><input type="radio" name="q5" value="C"> C. 日蝕</label>
+<label><input type="radio" name="q5" value="D"> D. 季節變化</label>
 </div>
 <div class="question">
-<h3>二、填空題（每空1分）</h3>
+<h3>二、填空題</h3>
 <p>1. 地球最外層是________，中間是________，最內是________。</p>
-<input type="text" name="f1" placeholder="地殼">
-<input type="text" name="f2" placeholder="地幔">
-<input type="text" name="f3" placeholder="地核">
+<input type="text" name="f1">
+<input type="text" name="f2">
+<input type="text" name="f3">
 <p>2. 地球自轉產生________交替，公轉產生________變化。</p>
-<input type="text" name="f4" placeholder="晝夜">
-<input type="text" name="f5" placeholder="四季">
-</div>
-<div class="question">
-<h3>三、簡答題（共10分）</h3>
-<p>1. 簡單說明地球自轉和公轉的分別。（6分）</p>
-<textarea name="s1" rows="4" style="width:100%;"></textarea>
-<p>2. 為什麼香港會有四季？（4分）</p>
-<textarea name="s2" rows="3" style="width:100%;"></textarea>
-</div>
-<div class="question">
-<h3>四、配圖題（共10分）</h3>
-<p>觀察下圖，標示地殼、地幔和地核，並說明各層特點。</p>
-<img src="https://www.datocms-assets.com/117510/1765926092-update_earth-structure_16dec25.png?auto=format&fit=max&w=800" alt="地球結構圖">
-<textarea name="p1" rows="5" style="width:100%;"></textarea>
+<input type="text" name="f4">
+<input type="text" name="f5">
 </div>
 <button type="button" onclick="checkAnswers1()">提交並評分</button>
 </form>
-<div id="result1" class="result" style="display:none;"></div>
+<div id="result1" class="result"></div>
 <script>
 function checkAnswers1() {
   let score = 0;
@@ -74,12 +73,10 @@ function checkAnswers1() {
     if (el && el.value.trim() === answers[k]) score += (k.startsWith('q') ? 2 : 1);
   }
   document.getElementById('result1').style.display = 'block';
-  document.getElementById('result1').innerHTML = `<h2>客觀題得分：${score} / 15 分</h2><p>簡答與配圖請自行對照答案評分。</p>
+  document.getElementById('result1').innerHTML = `<h2>客觀題得分：${score} / 15 分</h2>
   <h3>參考答案</h3><ul>
   <li>選擇：1A 2A 3B 4A 5B</li>
   <li>填空：地殼、地幔、地核、晝夜、四季</li>
-  <li>自轉：地球繞自己軸心轉，產生晝夜；公轉：地球繞太陽轉，產生四季。</li>
-  <li>香港有四季是因為地球公轉時地軸傾斜，導致不同季節日照不同。</li>
   </ul>`;
 }
 </script>
