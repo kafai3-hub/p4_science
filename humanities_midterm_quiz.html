@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>四年級人文科期中評估 - 互動測驗</title>
+<style>
+body { font-family: "Microsoft JhengHei", Arial, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; background: #f5f7fa; }
+h1, h2 { color: #1a5276; }
+.section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+img.qimg { max-width: 100%; height: auto; margin: 10px 0; border: 1px solid #ddd; }
+.q { margin: 15px 0; }
+label { display: block; margin: 5px 0; }
+input[type="text"] { padding: 6px; width: 200px; margin: 5px 0; }
+button { background: #1a5276; color: white; padding: 12px 30px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; margin: 20px 0; }
+button:hover { background: #154360; }
+#result { display: none; margin-top: 30px; padding: 20px; background: #eaf2f8; border-radius: 8px; }
+.correct { color: green; font-weight: bold; }
+.wrong { color: red; }
+</style>
+</head>
+<body>
+<h1>2026/2027 年度上學期<br>四年級 人文科 期中評估</h1>
+<p>日期：27-10-2026　時限：60 分鐘</p>
+
+<div class="section">
+<h2>（一）看圖配對題</h2>
+<p><strong>甲．圖例配對</strong></p>
+<img class="qimg" src="images/IMG_1206.jpg" alt="圖例">
+<div class="q">1. 商場 <input type="text" id="q1a1" size="3">　2. 郵政局 <input type="text" id="q1a2" size="3">　3. 小學 <input type="text" id="q1a3" size="3"></div>
+<div class="q">4. 餐廳 <input type="text" id="q1a4" size="3">　5. 博物館 <input type="text" id="q1a5" size="3"></div>
+<p><strong>乙．天氣情況配對</strong></p>
+<div class="q">1. 乾燥 <input type="text" id="q1b1" size="3">　2. 寒冷 <input type="text" id="q1b2" size="3">　3. 暴雨 <input type="text" id="q1b3" size="3"></div>
+<div class="q">4. 潮濕 <input type="text" id="q1b4" size="3">　5. 炎熱 <input type="text" id="q1b5" size="3"></div>
+</div>
+
+<div class="section">
+<h2>（二）看圖判斷題</h2>
+<img class="qimg" src="images/IMG_1207.jpg" alt="自然環境行為">
+<div class="q">1. 破壞自然環境的行為 <input type="text" id="q2_1" size="3"></div>
+<div class="q">2. 保護自然環境的行為 <input type="text" id="q2_2" size="3"></div>
+</div>
+
+<div class="section">
+<h2>（三）配對題</h2>
+<p><strong>甲．香港發展措施</strong></p>
+<div class="q">1. 建設鐵路網和公路網 <input type="text" id="q3a1" size="3"></div>
+<div class="q">2. 興建跨海大橋 <input type="text" id="q3a2" size="3"></div>
+<div class="q">3. 發展新市鎮 <input type="text" id="q3a3" size="3"></div>
+<p><strong>乙．季節天氣影響</strong></p>
+<div class="q">1. 春季出現大霧 <input type="text" id="q3b1" size="3"></div>
+<div class="q">2. 夏季發生暴雨 <input type="text" id="q3b2" size="3"></div>
+<div class="q">3. 秋季天氣乾燥 <input type="text" id="q3b3" size="3"></div>
+<div class="q">4. 冬季寒流侵襲 <input type="text" id="q3b4" size="3"></div>
+</div>
+
+<div class="section">
+<h2>（四）填圖題</h2>
+<img class="qimg" src="images/IMG_1208.jpg" alt="香港地圖">
+<div class="q">A. <input type="text" id="q4a">　B. <input type="text" id="q4b">　C. 香港島</div>
+</div>
+
+<div class="section">
+<h2>（五）填表題</h2>
+<img class="qimg" src="images/IMG_1208.jpg" alt="土地變化">
+<div class="q">1. <input type="text" id="q5_1" size="8"> 工程</div>
+<div class="q">2. <input type="text" id="q5_2" size="8"> 受到破壞</div>
+<div class="q">3. <input type="text" id="q5_3" size="8"></div>
+<div class="q">4. <input type="text" id="q5_4" size="8"></div>
+</div>
+
+<div class="section">
+<h2>（六）高階思維題</h2>
+<img class="qimg" src="images/IMG_1209.jpg" alt="自然環境">
+<div class="q">1. <input type="text" id="q6_1">　2. <input type="text" id="q6_2"></div>
+<div class="q">3. <input type="text" id="q6_3">　4. <input type="text" id="q6_4">　5. <input type="text" id="q6_5"></div>
+</div>
+
+<div class="section">
+<h2>（七）常識題</h2>
+<div class="q">1. 列舉一座香港高於900米的山名：<input type="text" id="q7_1"></div>
+<div class="q">2. 香港現時最高級別的暴雨警告信號顏色：<input type="text" id="q7_2"></div>
+<div class="q">3. 香港國際機場現時有多少條跑道：<input type="text" id="q7_3"></div>
+</div>
+
+<div class="section">
+<h2>（八）生活情境題</h2>
+<img class="qimg" src="images/IMG_1210.jpg" alt="炎熱天氣">
+<div class="q">1. 可能發出的天氣警告信號：<input type="text" id="q8_1"></div>
+<div class="q">2. 身體可能出現的不良反應（一項）：<input type="text" id="q8_2"></div>
+<div class="q">3. 確保安全的應對方法（一項）：<input type="text" id="q8_3"></div>
+</div>
+
+<div class="section">
+<h2>（九）排序題</h2>
+<p>四大洋面積由大至小：A.印度洋 B.太平洋 C.北冰洋 D.大西洋</p>
+<div class="q">（<input type="text" id="q9_1" size="2">）→（<input type="text" id="q9_2" size="2">）→（<input type="text" id="q9_3" size="2">）→（<input type="text" id="q9_4" size="2">）</div>
+</div>
+
+<div class="section">
+<h2>（十）個案分析題</h2>
+<img class="qimg" src="images/IMG_1211.jpg" alt="尖沙咀地圖">
+<div class="q">1. 是甚麼地圖：<input type="text" id="q10_1"></div>
+<div class="q">2. B2 是甚麼座標：<input type="text" id="q10_2"></div>
+<div class="q">3. 圖例「H」指的設施：<input type="text" id="q10_3"></div>
+<div class="q">4. 地圖右下角的「尺」稱做：<input type="text" id="q10_4"></div>
+<div class="q">5. 應向甚麼方向走：<input type="text" id="q10_5"></div>
+</div>
+
+<div class="section">
+<h2>（十一）簡答題</h2>
+<div class="q">1. 維多利亞港兩岸的土地大多是怎樣得來的？<br><input type="text" id="q11_1" style="width:80%"></div>
+<div class="q">2. 熱帶氣旋大多會在甚麼季節吹襲香港？<br><input type="text" id="q11_2" style="width:80%"></div>
+<div class="q">3. 地球上七大洲中，哪個洲的面積最大？<br><input type="text" id="q11_3" style="width:80%"></div>
+<div class="q">4. 請寫出一項為長者送暖的方法。<br><input type="text" id="q11_4" style="width:80%"></div>
+<div class="q">5. 香港的平地分佈是怎樣？<br><input type="text" id="q11_5" style="width:80%"></div>
+<div class="q">6. 地球的表面是由海洋和甚麼覆蓋著？<br><input type="text" id="q11_6" style="width:80%"></div>
+<div class="q">7. 在極地生活的居民，日常主要以甚麼為生？<br><input type="text" id="q11_7" style="width:80%"></div>
+</div>
+
+<button onclick="checkAnswers()">提交並批改</button>
+
+<div id="result">
+<h2>批改結果</h2>
+<div id="score"></div>
+<div id="details"></div>
+</div>
+
+<script>
+function checkAnswers() {
+  const answers = {
+    q1a1: "X", q1a2: "D", q1a3: "B", q1a4: "C", q1a5: "X",
+    q1b1: "C", q1b2: "B", q1b3: "D", q1b4: "A", q1b5: "C",
+    q2_1: "A", q2_2: "B",
+    q3a1: "A", q3a2: "A", q3a3: "B",
+    q3b1: "C", q3b2: "B", q3b3: "E", q3b4: "A",
+    q4a: "新界", q4b: "九龍",
+    q5_1: "F", q5_2: "B", q5_3: "C", q5_4: "D",
+    q6_1: "E", q6_2: "F", q6_3: "B", q6_4: "A", q6_5: "D",
+    q7_1: "大帽山", q7_2: "黑色", q7_3: "三",
+    q8_1: "酷熱", q8_2: "中暑", q8_3: "多喝水",
+    q9_1: "B", q9_2: "D", q9_3: "A", q9_4: "C",
+    q10_1: "香港街道圖", q10_2: "網格", q10_3: "酒店", q10_4: "比例尺", q10_5: "南",
+    q11_1: "填海", q11_2: "夏季", q11_3: "亞洲", q11_4: "送暖包", q11_5: "主要在新界北部", q11_6: "陸地", q11_7: "漁獵"
+  };
+  let correct = 0;
+  let total = Object.keys(answers).length;
+  let details = "<h3>詳細答案：</h3><ul>";
+  for (let id in answers) {
+    let user = (document.getElementById(id)?.value || "").trim();
+    let ans = answers[id];
+    if (user.toLowerCase() === ans.toLowerCase() || user === ans) {
+      correct++;
+      details += `<li class="correct">${id}: 正確（${ans}）</li>`;
+    } else {
+      details += `<li class="wrong">${id}: 你的答案「${user || "未填"}」，正確答案：${ans}</li>`;
+    }
+  }
+  details += "</ul>";
+  document.getElementById("score").innerHTML = `<h3>得分：${correct} / ${total}</h3>`;
+  document.getElementById("details").innerHTML = details;
+  document.getElementById("result").style.display = "block";
+  window.scrollTo(0, document.body.scrollHeight);
+}
+</script>
+</body>
+</html>
