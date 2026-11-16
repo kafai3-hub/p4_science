@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>小四時事閃卡 - 2026年7-11月</title>
+<style>
+body { font-family: "Microsoft JhengHei", Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 20px; background: #f5f7fa; text-align: center; }
+h1 { color: #1a5276; }
+.card { background: white; border-radius: 12px; padding: 30px 25px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-height: 280px; }
+.question { font-size: 1.3em; line-height: 1.6; margin-bottom: 20px; }
+.options { text-align: left; margin: 15px 0; }
+.options label { display: block; margin: 8px 0; padding: 8px; background: #f8f9fa; border-radius: 6px; }
+.answer { display: none; margin-top: 25px; padding: 20px; background: #eaf2f8; border-radius: 8px; text-align: left; line-height: 1.7; }
+.answer.show { display: block; }
+.bg { margin-top: 12px; color: #2c3e50; font-size: 0.95em; }
+button { background: #1a5276; color: white; padding: 12px 28px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin: 8px; }
+button:hover { background: #154360; }
+.nav { margin-top: 20px; }
+.progress { color: #555; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<h1>小四時事閃卡</h1>
+<p>2026年7–11月香港時事（適合常識／人文科）</p>
+<p class="progress" id="progress">第 1 / 10 題</p>
+
+<div class="card" id="card">
+  <div class="question" id="qText"></div>
+  <div class="options" id="opts"></div>
+  <button id="showBtn" onclick="showAnswer()">顯示答案及背景</button>
+  <div class="answer" id="ansBox"></div>
+</div>
+
+<div class="nav">
+  <button onclick="prevCard()">上一題</button>
+  <button onclick="nextCard()">下一題</button>
+  <button onclick="shuffleCards()">隨機順序</button>
+</div>
+
+<script>
+const cards = [
+  {
+    q: "2026年8月，受強颱風外圍下沉氣流影響，天文台總部錄得破紀錄高溫。最高氣溫是多少？",
+    opts: ["A. 35.5°C", "B. 36.9°C", "C. 38.2°C", "D. 39.8°C"],
+    ans: "B. 36.9°C",
+    bg: "背景：天文台總部錄得36.9°C，打破1884年以來紀錄；上水更達39.8°C。提醒市民注意暑熱，政府會發出工作暑熱警告。"
+  },
+  {
+    q: "政府於2026年9月公布《香港特別行政區經濟和社會發展第一個五年規劃》，涵蓋哪段時期？",
+    opts: ["A. 2025—2029年", "B. 2026—2030年", "C. 2027—2031年", "D. 2024—2028年"],
+    ans: "B. 2026—2030年",
+    bg: "背景：這是香港回歸後首份五年規劃，主動對接國家「十五五」規劃，作為中長期經濟和社會發展藍圖，與施政報告一脈相承。"
+  },
+  {
+    q: "行政長官2026年《施政報告》的主題包括「以長遠謀全局、以改革開新篇」。報告與哪份文件一脈相承？",
+    opts: ["A. 財政預算案", "B. 香港第一個五年規劃", "C. 北部都會區發展策略", "D. 粵港澳大灣區規劃"],
+    ans: "B. 香港第一個五年規劃",
+    bg: "背景：施政報告是落實五年規劃的年度報告，聚焦人才、產業、投資、制度保障和國際合作五大機遇，強調北部都會區等重點發展。"
+  },
+  {
+    q: "2026年11月，政府與港鐵簽訂北環線全線項目協議。整個項目建造成本預算約為多少？",
+    opts: ["A. 650億元", "B. 862億元", "C. 1000億元", "D. 1200億元"],
+    ans: "B. 862億元",
+    bg: "背景：成本較原先預算低約28%，目標2034年或之前主線及支線同步開通。採用「鐵路加物業」模式，有助北部都會區交通發展。"
+  },
+  {
+    q: "北環線主要連接哪些地區，有助改善新界北交通？",
+    opts: ["A. 只連接九龍", "B. 連接東鐵線及屯馬線相關地區，並設支線至口岸", "C. 只服務港島", "D. 只服務大嶼山"],
+    ans: "B. 連接東鐵線及屯馬線相關地區，並設支線至口岸",
+    bg: "背景：北環線是北部都會區重要鐵路項目，改善新界北交通網絡，方便居民往來及跨境。"
+  },
+  {
+    q: "2025年大埔宏福苑大火後，政府於2026年10月公布獨立委員會報告。報告建議的主要改革之一是？",
+    opts: ["A. 增加更多商場", "B. 立法禁止樓宇維修工程圍標", "C. 減少公屋供應", "D. 取消消防檢查"],
+    ans: "B. 立法禁止樓宇維修工程圍標",
+    bg: "背景：報告提出多項建議，包括打擊圍標、成立樓宇維修支援及服務局、改革監管制度等，以防止類似火災再發生。"
+  },
+  {
+    q: "就大埔宏福苑火災報告，哪位官員請辭？",
+    opts: ["A. 教育局局長", "B. 房屋局局長何永賢", "C. 運輸及物流局局長", "D. 財經事務及庫務局局長"],
+    ans: "B. 房屋局局長何永賢",
+    bg: "背景：政府公開報告後，房屋局局長請辭，並啟動相關問責及改革工作，強調樓宇安全與維修監管的重要性。"
+  },
+  {
+    q: "2026年有關長者友善樓宇設計的強制規定於哪個月起生效？",
+    opts: ["A. 7月", "B. 8月", "C. 9月", "D. 10月"],
+    ans: "B. 8月",
+    bg: "背景：為應對人口老化，政府推行長者友善樓宇設計強制規定，方便長者日常生活及出行。"
+  },
+  {
+    q: "2026年10月正式投入運作的新口岸是？",
+    opts: ["A. 蓮塘口岸", "B. 新皇崗口岸", "C. 深圳灣口岸", "D. 落馬洲口岸"],
+    ans: "B. 新皇崗口岸",
+    bg: "背景：新皇崗口岸開通有助提升跨境通關效率，方便港人往來深圳及大灣區。"
+  },
+  {
+    q: "面對夏季極端高溫，政府會發出甚麼警告提醒市民注意暑熱？",
+    opts: ["A. 暴雨警告", "B. 工作暑熱警告", "C. 寒冷天氣警告", "D. 雷暴警告"],
+    ans: "B. 工作暑熱警告",
+    bg: "背景：高溫天氣下，勞工處會發出工作暑熱警告，提醒戶外工作者注意休息、補水，保障健康安全。"
+  }
+];
+
+let current = 0;
+let order = cards.map((_, i) => i);
+
+function renderCard() {
+  const idx = order[current];
+  const c = cards[idx];
+  document.getElementById('qText').innerText = c.q;
+  const optsDiv = document.getElementById('opts');
+  optsDiv.innerHTML = c.opts.map(o => `<label>${o}</label>`).join('');
+  const ansBox = document.getElementById('ansBox');
+  ansBox.classList.remove('show');
+  ansBox.innerHTML = `<strong>答案：</strong>${c.ans}<div class="bg"><strong>基本／背景資料：</strong>${c.bg}</div>`;
+  document.getElementById('showBtn').style.display = 'inline-block';
+  document.getElementById('progress').innerText = `第 ${current + 1} / ${cards.length} 題`;
+}
+
+function showAnswer() {
+  document.getElementById('ansBox').classList.add('show');
+  document.getElementById('showBtn').style.display = 'none';
+}
+
+function nextCard() {
+  current = (current + 1) % cards.length;
+  renderCard();
+}
+
+function prevCard() {
+  current = (current - 1 + cards.length) % cards.length;
+  renderCard();
+}
+
+function shuffleCards() {
+  order = order.sort(() => Math.random() - 0.5);
+  current = 0;
+  renderCard();
+}
+
+renderCard();
+</script>
+</body>
+</html>
