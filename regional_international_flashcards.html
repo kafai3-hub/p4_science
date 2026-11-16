@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>小四地區及國際時事閃卡</title>
+<style>
+body { font-family: "Microsoft JhengHei", Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 20px; background: #f5f7fa; text-align: center; }
+h1 { color: #1a5276; }
+.card { background: white; border-radius: 12px; padding: 30px 25px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-height: 300px; }
+.question { font-size: 1.25em; line-height: 1.6; margin-bottom: 20px; }
+.options { text-align: left; margin: 15px 0; }
+.options label { display: block; margin: 8px 0; padding: 8px; background: #f8f9fa; border-radius: 6px; }
+.answer { display: none; margin-top: 25px; padding: 20px; background: #eaf2f8; border-radius: 8px; text-align: left; line-height: 1.7; }
+.answer.show { display: block; }
+.bg { margin-top: 12px; color: #2c3e50; font-size: 0.95em; }
+button { background: #1a5276; color: white; padding: 12px 28px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin: 8px; }
+button:hover { background: #154360; }
+.nav { margin-top: 20px; }
+.progress { color: #555; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<h1>小四地區及國際時事閃卡</h1>
+<p>亞運、APEC 等 2026 年地區及國際新聞</p>
+<p class="progress" id="progress">第 1 / 12 題</p>
+
+<div class="card" id="card">
+  <div class="question" id="qText"></div>
+  <div class="options" id="opts"></div>
+  <button id="showBtn" onclick="showAnswer()">顯示答案及背景</button>
+  <div class="answer" id="ansBox"></div>
+</div>
+
+<div class="nav">
+  <button onclick="prevCard()">上一題</button>
+  <button onclick="nextCard()">下一題</button>
+  <button onclick="shuffleCards()">隨機順序</button>
+</div>
+
+<script>
+const cards = [
+  {
+    q: "2026年亞洲運動會（亞運）在哪個城市舉行？",
+    opts: ["A. 東京", "B. 名古屋（愛知縣）", "C. 大阪", "D. 北京"],
+    ans: "B. 名古屋（愛知縣）",
+    bg: "背景：第20屆亞洲運動會於2026年9月19日至10月4日在日本愛知縣名古屋舉行，是日本自1994年廣島亞運後再次主辦。"
+  },
+  {
+    q: "2026年名古屋亞運，香港代表隊共奪得多少面獎牌？",
+    opts: ["A. 46面", "B. 53面", "C. 54面", "D. 60面"],
+    ans: "C. 54面",
+    bg: "背景：港隊以11金、19銀、24銅共54面獎牌，創下歷屆亞運最佳成績，獎牌榜排第9位。"
+  },
+  {
+    q: "2026年名古屋亞運，香港代表隊共奪得多少面金牌？",
+    opts: ["A. 8面", "B. 11面", "C. 15面", "D. 19面"],
+    ans: "B. 11面",
+    bg: "背景：11面金牌亦是港隊歷屆亞運最多，超越上屆杭州亞運的8金。"
+  },
+  {
+    q: "2026年名古屋亞運金牌榜第一名是哪個國家？",
+    opts: ["A. 日本", "B. 南韓", "C. 中國", "D. 印度"],
+    ans: "C. 中國",
+    bg: "背景：中國以169金、共341面獎牌居首；東道主日本以83金、269面獎牌排第二。"
+  },
+  {
+    q: "香港運動員何詩蓓在2026年名古屋亞運表現出色，她主要參加哪個項目？",
+    opts: ["A. 田徑", "B. 游泳", "C. 網球", "D. 羽毛球"],
+    ans: "B. 游泳",
+    bg: "背景：何詩蓓在游泳項目奪得多面獎牌，是港隊奪金及獎牌最多的選手之一。"
+  },
+  {
+    q: "APEC（亞太經濟合作組織）2026年領導人會議在哪個城市舉行？",
+    opts: ["A. 北京", "B. 上海", "C. 深圳", "D. 廣州"],
+    ans: "C. 深圳",
+    bg: "背景：2026年APEC經濟領袖會議於11月18-19日在深圳舉行，主題為「建設亞太共同體，促進共同繁榮」。"
+  },
+  {
+    q: "香港是APEC的成員嗎？",
+    opts: ["A. 是，以「香港」名義參與", "B. 不是", "C. 只是觀察員", "D. 只參與財長會議"],
+    ans: "A. 是，以「香港」名義參與",
+    bg: "背景：香港是APEC成員經濟體之一。APEC以「成員經濟體」為單位，香港與台灣等都能參與。"
+  },
+  {
+    q: "2026年10月，APEC財長會議在香港舉行。這是香港第幾次主辦APEC財長會議？",
+    opts: ["A. 第一次", "B. 第二次", "C. 第三次", "D. 第四次"],
+    ans: "A. 第一次",
+    bg: "背景：2026年10月20-21日，APEC財長會議在香港舉行，是香港首次主辦該會議，展現香港作為國際金融中心的角色。"
+  },
+  {
+    q: "行政長官李家超將出席2026年深圳APEC會議。他主要出席哪部分活動？",
+    opts: ["A. 只出席開幕禮", "B. 出席領導人會議及相關活動", "C. 只出席工商峰會", "D. 不出席"],
+    ans: "B. 出席領導人會議及相關活動",
+    bg: "背景：行政長官李家超於11月17日前往深圳，出席APEC經濟領袖會議及工商領導人峰會等相關活動，並與其他經濟體領袖會面。"
+  },
+  {
+    q: "2026年名古屋亞運閉幕後，下一屆亞運預定在哪個城市舉行？",
+    opts: ["A. 首爾", "B. 多哈（卡塔爾）", "C. 雅加達", "D. 德里"],
+    ans: "B. 多哈（卡塔爾）",
+    bg: "背景：下一屆（第21屆）亞洲運動會預定於2030年在卡塔爾多哈舉行。"
+  },
+  {
+    q: "港隊在2026年名古屋亞運的男子七人欖球項目有何表現？",
+    opts: ["A. 首次參賽", "B. 奪得金牌，實現三連冠", "C. 只得銅牌", "D. 未有參賽"],
+    ans: "B. 奪得金牌，實現三連冠",
+    bg: "背景：港隊男子七人欖球隊以26:0擊敗中國隊，衛冤金牌，成為港隊首個連續三屆亞運奪金的項目。"
+  },
+  {
+    q: "APEC成員經濟體約佔全球貿易額的比例是？",
+    opts: ["A. 約20%", "B. 約30%", "C. 約一半", "D. 超過90%"],
+    ans: "C. 約一半",
+    bg: "背景：APEC成員經濟體合計約佔全球GDP的60%以上，全球貿易額約一半來自這些經濟體，對香港的貿易非常重要（約佔香港對外貿易的八成以上）。"
+  }
+];
+
+let current = 0;
+let order = cards.map((_, i) => i);
+
+function renderCard() {
+  const idx = order[current];
+  const c = cards[idx];
+  document.getElementById('qText').innerText = c.q;
+  const optsDiv = document.getElementById('opts');
+  optsDiv.innerHTML = c.opts.map(o => `<label>${o}</label>`).join('');
+  const ansBox = document.getElementById('ansBox');
+  ansBox.classList.remove('show');
+  ansBox.innerHTML = `<strong>答案：</strong>${c.ans}<div class="bg"><strong>基本／背景資料：</strong>${c.bg}</div>`;
+  document.getElementById('showBtn').style.display = 'inline-block';
+  document.getElementById('progress').innerText = `第 ${current + 1} / ${cards.length} 題`;
+}
+
+function showAnswer() {
+  document.getElementById('ansBox').classList.add('show');
+  document.getElementById('showBtn').style.display = 'none';
+}
+
+function nextCard() {
+  current = (current + 1) % cards.length;
+  renderCard();
+}
+
+function prevCard() {
+  current = (current - 1 + cards.length) % cards.length;
+  renderCard();
+}
+
+function shuffleCards() {
+  order = order.sort(() => Math.random() - 0.5);
+  current = 0;
+  renderCard();
+}
+
+renderCard();
+</script>
+</body>
+</html>
